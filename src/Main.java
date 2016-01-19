@@ -11,9 +11,12 @@ public class Main {
 
 
     public static void main(String[] args) {
+
 //CharAlpabeth();
 //Opt();
-        Matrix();
+//Matrix();
+Some();
+
     }
 
 
@@ -53,6 +56,7 @@ public class Main {
             ch++;
         }
     }
+
 
     static private void Matrix(){
 
@@ -156,6 +160,44 @@ tt.toast_space();
 
 
 
+    }
+
+
+
+    static private void Some(){
+        boolean b1 = true;
+        boolean b2 = false;
+
+        int f1 = 23;
+        int f2 = 3;
+
+       int f =  b1 ? 20 : 30;
+        String d = b2 ? "Yes" : " No";
+
+        tt.toastPrintLn("b2 = "+d);
+        tt.toastPrintLn(String.valueOf((double)f1/f2));
+
+
+        String df = "";
+
+
+
+        for(int i=2; i<=100; i++ ){
+            int co=0;
+            for (int j = 2; j<i; j++){
+                if(i%j == 0){
+                    co++;
+                }
+
+            }
+
+            if (co==0){
+                df+=i + " ";
+            }
+
+        }
+
+        tt.toastPrintLn(df);
     }
 
 
