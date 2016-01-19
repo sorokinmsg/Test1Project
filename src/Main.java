@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-/**
- * Created by irisochka on 19.01.16.
- */
+
 public class Main {
 
 
@@ -64,6 +62,7 @@ public class Main {
         for (int i=0; i<10; i++){
             for (int j=0; j<10; j++){
                 A[i][j] = (int)(Math.random()*99)+1;
+
                 tt.toastPrint(A[i][j] + "\t");
             }
             tt.toastPrintLn("");
