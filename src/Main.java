@@ -1,13 +1,12 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 
 public class Main {
 
 
-  static Toast tt = new Toast();
-    static  String kk;
-
-
+    static Toast tt = new Toast();
+    static String kk;
 
 
     public static void main(String[] args) {
@@ -15,61 +14,59 @@ public class Main {
 //CharAlpabeth();
 //Opt();
 //Matrix();
-Some();
-
+//Some();
+        Switch();
     }
 
 
-   static private void Opt(){
-       tt.toastPrintLn("Введите количество циклов");
+    static private void Opt() {
+        tt.toastPrintLn("Введите количество циклов");
 
-       Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-       int ff = sc.nextInt();
+        int ff = sc.nextInt();
 
-       tt.toastPrintLn("---Start---");
+        tt.toastPrintLn("---Start---");
 
-       for (int i = 0; i < ff; i++){
-           kk = (i+1) + "-й член последовательности равен : " + String.valueOf((int)(Math.random()*9)+1);
-           tt.toastPrintLn(kk);
+        for (int i = 0; i < ff; i++) {
+            kk = (i + 1) + "-й член последовательности равен : " + String.valueOf((int) (Math.random() * 9) + 1);
+            tt.toastPrintLn(kk);
 
-       }
+        }
 
-       tt.toastPrintLn("---End---");
-       tt.toastPrintLn("Продолжить? (Да/Нет)");
-       String xx = sc.next();
-       if(xx.equals("Да")){
-        tt.toast_space();
-           Opt();
-       }
+        tt.toastPrintLn("---End---");
+        tt.toastPrintLn("Продолжить? (Да/Нет)");
+        String xx = sc.next();
+        if (xx.equals("Да")) {
+            tt.toast_space();
+            Opt();
+        }
     }
 
 
-
-    static private void CharAlpabeth(){
+    static private void CharAlpabeth() {
         char ch = 0;
 
 
-        for (int i = 0; i <100; i++){
+        for (int i = 0; i < 100; i++) {
 
-            tt.toastPrintLn(i+" "+ch);
+            tt.toastPrintLn(i + " " + ch);
             ch++;
         }
     }
 
 
-    static private void Matrix(){
+    static private void Matrix() {
 
         int[][] A = new int[10][10];
-
 
 
         tt.toastPrintLn("---Матрица случайных чисел---");
 
 
-        for (int i=0; i<10; i++){
-            for (int j=0; j<10; j++){
-                A[i][j] = (int)(Math.random()*99)+1;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                A[i][j] = (int) (Math.random() * 99) + 1;
 
                 tt.toastPrint(A[i][j] + "\t");
             }
@@ -77,40 +74,38 @@ Some();
         }
 
 
-tt.toast_space();
+        tt.toast_space();
         tt.toastPrintLn("---Матрица четных элементов---");
 
-    for (int i=0; i<10; i++){
-        for (int j=0; j<10; j++){
-            if(A[i][j]%2 == 0){
-                tt.toastPrint(1 + "\t");
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (A[i][j] % 2 == 0) {
+                    tt.toastPrint(1 + "\t");
+                } else {
+                    tt.toastPrint(0 + "\t");
+                }
             }
-            else {
-                tt.toastPrint(0 + "\t");
-            }
+            tt.toastPrintLn("");
         }
-        tt.toastPrintLn("");
-    }
-
 
 
         tt.toast_space();
         tt.toastPrintLn("---Обратная матрица---");
 
-    for (int i=9; i>=0; i--){
-        for (int j=9; j>=0; j--){
+        for (int i = 9; i >= 0; i--) {
+            for (int j = 9; j >= 0; j--) {
 
-            tt.toastPrint(A[i][j] + "\t");
+                tt.toastPrint(A[i][j] + "\t");
+            }
+            tt.toastPrintLn("");
         }
-        tt.toastPrintLn("");
-    }
 
         tt.toast_space();
 
         tt.toastPrintLn("---Транспонированная матрица---");
 
-        for (int i=0; i<10; i++){
-            for (int j=0; j<10; j++){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
 
                 tt.toastPrint(A[j][i] + "\t");
             }
@@ -123,19 +118,19 @@ tt.toast_space();
         int temp;
 
 
-        for (int i=0; i<10; i++){
-            for (int j=0; j<10; j++){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
 
 
-                for (int l=0; l<10; l++){
-                    for (int k=0; k<10; k++){
-                    if(A[i][j]<A[l][k]){
-                        min = A[l][k];
-                        temp = A[i][j];
+                for (int l = 0; l < 10; l++) {
+                    for (int k = 0; k < 10; k++) {
+                        if (A[i][j] < A[l][k]) {
+                            min = A[l][k];
+                            temp = A[i][j];
 
-                        A[i][j] = min;
-                        A[l][k] = temp;
-                    }
+                            A[i][j] = min;
+                            A[l][k] = temp;
+                        }
 
                     }
 
@@ -147,8 +142,8 @@ tt.toast_space();
 
         tt.toastPrintLn("---Упорядоченная матрица---");
 
-        for (int i=0; i<10; i++){
-            for (int j=0; j<10; j++){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
 
                 tt.toastPrint(A[i][j] + "\t");
             }
@@ -156,43 +151,37 @@ tt.toast_space();
         }
 
 
-
-
-
-
     }
 
 
-
-    static private void Some(){
+    static private void Some() {
         boolean b1 = true;
         boolean b2 = false;
 
         int f1 = 23;
         int f2 = 3;
 
-       int f =  b1 ? 20 : 30;
+        int f = b1 ? 20 : 30;
         String d = b2 ? "Yes" : " No";
 
-        tt.toastPrintLn("b2 = "+d);
-        tt.toastPrintLn(String.valueOf((double)f1/f2));
+        tt.toastPrintLn("b2 = " + d);
+        tt.toastPrintLn(String.valueOf((double) f1 / f2));
 
 
         String df = "";
 
 
-
-        for(int i=2; i<=100; i++ ){
-            int co=0;
-            for (int j = 2; j<i; j++){
-                if(i%j == 0){
+        for (int i = 2; i <= 100; i++) {
+            int co = 0;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
                     co++;
                 }
 
             }
 
-            if (co==0){
-                df+=i + " ";
+            if (co == 0) {
+                df += i + " ";
             }
 
         }
@@ -201,4 +190,72 @@ tt.toast_space();
     }
 
 
+    static private void Switch() {
+/*tt.toastPrintLn("Введите переменную");
+        Scanner sca = new Scanner(System.in);
+
+        char ld = sca.next().charAt(0);
+
+        switch (ld){
+            case '1':
+                tt.toastPrintLn("ld = 12");
+                break;
+            case '2':
+                tt.toastPrintLn("ld = 11");
+                break;
+            default:
+                tt.toastPrintLn("ld = ???");
+                break;
+        }*/
+
+
+
+
+      /*  int i, j;
+
+        for (i = 0, j = 10; i<j; i++, j--){
+            tt.toastPrintLn(i + " " + j);
+        }*/
+
+        Scanner sca = new Scanner(System.in);
+
+
+
+
+/*
+for (;;){
+    tt.toastPrintLn("olo");
+  char ch = sca.next().charAt(0);
+    if(ch=='H') break;
+
+}*/
+
+
+      /*  for (int i = 0; i < 100; i++) {
+            if(i%2!=0) continue;
+            tt.toastPrintLn("i = "+i);
+
+        }*/
+
+
+
+
+
+String sd = "";
+
+       for (int i = 1; i<100; i++)
+     {
+            sd = "";
+
+            for (int j = 2; j<i; j++){
+
+                if(i%j==0) sd+=j + " ";
+                else continue;
+            }
+            tt.toastPrintLn(i + " Делится без остатка на : " + sd);
+        }
+
+
+
+    }
 }
